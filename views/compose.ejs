@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compose Email</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/compose.css">
+
+</head>
+
+<body>
+    <div class="header">
+        <% if (user) { %>
+            <div class="user-info">
+                <i class="fas fa-user-circle"></i>
+                <%= user.fullname %>
+            </div>
+            <% } %>
+                <a class="sign-out" href="/logout"><i class="fas fa-sign-out-alt"></i> Sign out</a>
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <div class="menu-item" onclick="navigateTo('compose')">
+                <i class="fas fa-edit"></i>
+                <span>Compose</span>
+            </div>
+            <div class="menu-item" onclick="navigateTo('inbox')">
+                <i class="fas fa-inbox"></i>
+                <span>Inbox</span>
+            </div>
+            <div class="menu-item" onclick="navigateTo('outbox')">
+                <i class="fas fa-paper-plane"></i>
+                <span>Outbox</span>
+            </div>
+        </div>
+        <div class="content">
+            <form id="compose-form" method="post" action="/compose" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="recipient">Recipient</label>
+                    <select id="recipient" name="receiverEmail" required>
+                        <% users.forEach(u=> { %>
+                            <option value="<%= u.email %>">
+                                <%= u.email %>
+                            </option>
+                            <% }); %>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" placeholder="Subject" value="">
+                </div>
+                <div class="form-group">
+                    <label for="body">Body</label>
+                    <textarea id="body" name="body" rows="10" placeholder="Write your email here..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="file">Attachment</label>
+                    <input id="file" type="file" name="file">
+                </div>
+                <button type="submit" class="send-button">Send</button>
+            </form>
+            <div id="message" class="error-message" style="display: none;"></div>
+            <div id="success-message" class="success-message" style="display: none;">Email sent successfully!</div>
+        </div>
+    </div>
+
+    <script>
+        function navigateTo(page) {
+            window.location.href = `/${page}`
+        }
+
+
+        function sendEmail() {
+            const recipient = document.getElementById('recipient').value;
+            const subject = document.getElementById('subject').value || '(no subject)';
+            const body = document.getElementById('body').value;
+
+            if (!recipient) {
+                document.getElementById('message').textContent = 'Please select a recipient.';
+                document.getElementById('message').style.display = 'block';
+                document.getElementById('success-message').style.display = 'none';
+                return;
+            }
+        }
+    </script>
+</body>
+
+</html>

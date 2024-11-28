@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Detail</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/email-details.css">
+</head>
+
+<body>
+    <div class="header">
+        <% if (user) { %>
+            <div class="user-info">
+                <i class="fas fa-user-circle"></i>
+                <%= user.fullname %>
+            </div>
+            <% } %>
+                <a class="sign-out" href="/logout"><i class="fas fa-sign-out-alt"></i> Sign out</a>
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <div class="menu-item" onclick="navigateTo('compose')">
+                <i class="fas fa-edit"></i>
+                <span>Compose</span>
+            </div>
+            <div class="menu-item" onclick="navigateTo('inbox')">
+                <i class="fas fa-inbox"></i>
+                <span>Inbox</span>
+            </div>
+            <div class="menu-item" onclick="navigateTo('outbox')">
+                <i class="fas fa-paper-plane"></i>
+                <span>Outbox</span>
+            </div>
+        </div>
+        <div class="content">
+            <% if (email) { %>
+                <div class="email-detail">
+                    <div class="subject" id="email-subject">
+                        <p>
+                            <%= email.subject? email.subject : 'No Subject' %>
+                        </p>
+
+                    </div>
+                    <div class="body" id="email-body">
+                        <%= email.body? email.body : '' %>
+                    </div>
+                </div>
+                <% if (email.file) { %>
+                    <div class="email-detail">
+                        <h3>Attachment:</h3>
+                        <a href="/uploads/<%= email.file %>" download>
+                            <%= email.file %>
+                        </a>
+                    </div>
+                    <% } %>
+        </div>
+        <% } %>
+    </div>
+    </div>
+
+    <script>
+        function navigateTo(page) {
+            window.location.href = `/${page}`
+        }
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+.error-msg {
+    color: rgb(142, 0, 0);
+
+}
+
+
+.back-btn {
+    padding-top: 20px;
+    font-size: 20px;
+    color: #1A73E8;
+    text-decoration: none;
+    margin-bottom: 20px;
+    width: fit-content;
+}

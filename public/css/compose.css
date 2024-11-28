@@ -1,0 +1,52 @@
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group select,
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input[type="file"] {
+    padding: 3px;
+}
+
+.send-button {
+    padding: 10px 20px;
+    background-color: #1a73e8;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.error-message,
+.success-message {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.error-message {
+    background-color: #d93025;
+    color: #fff;
+}
+
+.success-message {
+    background-color: #34a853;
+    color: #fff;
+}

@@ -1,0 +1,13 @@
+.email-detail {
+    margin-bottom: 20px;
+}
+
+.email-detail .subject {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.email-detail .body {
+    margin-bottom: 20px;
+}

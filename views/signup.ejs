@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Sign Up
+    </title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/signup.css">
+    <script src="/js/signup.js"></script>
+</head>
+
+<body>
+    <h1 id="welcome-message">Welcome</h1>
+    <div class="container-login">
+        <div class="logo">
+            <img alt="logo" src="/images/logo.png" />
+            <h1 class="title">
+                Sign Up
+            </h1>
+        </div>
+        <h1 class="subtitle">
+            Create a new mail Account
+        </h1>
+        <% if (errorMessage) { %>
+            <div class="error">
+                <%= errorMessage %>
+            </div>
+            <% } %>
+                <form action="/signup" method="post" id="form">
+                    <div class="input-group">
+                        <label for="full-name">Fullname</label>
+                        <input id="full-name" required name="fullname" type="text" />
+                        <div class="error" id="name-error"></div>
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input id="email" required name="email" type="email" />
+                        <div class="error" id="email-error"></div>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input id="password" required name="password" type="password" />
+                        <div class="error" id="password-error"></div>
+                    </div>
+                    <div class="input-group">
+                        <label for="re-password">Confirm Password</label>
+                        <input id="re-password" required type="password" />
+                        <div class="error" id="re-password-error"></div>
+                    </div>
+
+                    <div class="buttons">
+                        <button class="button" type="submit" id="sign-up-btn">Sign up!</button>
+                        <a class="create-account" href="/signin">
+                            Already have an Account? Sign In.
+                        </a>
+                    </div>
+                </form>
+
+                <div class="footer">
+                    <div>
+                        English
+                    </div>
+                    <div>
+                        <a href="#">
+                            Help
+                        </a>
+                        <a href="#">
+                            Policies
+                        </a>
+                        <a href="#">
+                            Privacies
+                        </a>
+                    </div>
+                </div>
+    </div>
+
+</body>
+
+</html>

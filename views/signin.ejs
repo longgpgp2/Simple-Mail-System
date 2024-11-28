@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Sign In
+    </title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/signin.css">
+    <script>
+        let loginBtn = document.getElementBy
+    </script>
+</head>
+
+
+<body>
+    <div class="container-login">
+        <div class="logo">
+            <img alt="logo" src="/images/logo.png" />
+            <h1 class="title">
+                Sign In
+            </h1>
+        </div>
+        <h1 class="subtitle">
+            Continue with Email
+        </h1>
+        <% if (errorMessage) { %>
+            <div class="error">
+                <%= errorMessage %>
+            </div>
+            <% } %>
+                <form action="/signin" method="post" id="form">
+                    <label class="input-label" for="email">
+                        Enter your email
+                    </label>
+                    <input class="input-field" required id="email" name="email" type="email" />
+                    <label class="input-label" for="password">
+                        Enter your password
+                    </label>
+                    <input class="input-field" required id="password" name="password" type="password" />
+                    <div class="buttons">
+                        <a class="create-account" href="/signup">
+                            Create a new Account
+                        </a>
+                        <button class="sign-in-button" type="submit">
+                            Sign In
+                        </button>
+                    </div>
+                </form>
+
+                <a class="forgot-email" href="#">
+                    Forgot your email?
+                </a>
+                <p class="info-text">
+                </p>
+
+                <div class="footer">
+                    <div>
+                        English
+                    </div>
+                    <div>
+                        <a href="#">
+                            Help
+                        </a>
+                        <a href="#">
+                            Policies
+                        </a>
+                        <a href="#">
+                            Privacies
+                        </a>
+                    </div>
+                </div>
+    </div>
+</body>
+
+</html>

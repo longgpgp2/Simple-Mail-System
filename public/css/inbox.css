@@ -1,0 +1,100 @@
+thead tr {
+    display: flex;
+    align-items: center;
+}
+
+thead input {
+    margin-right: 10px;
+}
+
+thead .th-sender {
+    flex: 1;
+    font-weight: bold;
+}
+
+thead .th-subject {
+    flex: 2;
+    color: #1a73e8;
+    cursor: pointer;
+}
+
+thead .th-date {
+    color: #5f6368;
+}
+
+.email-list {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.email-list th,
+.email-list td {
+    padding: 10px;
+    border-bottom: 1px solid #dadce0;
+}
+
+.email-list th {
+    text-align: left;
+    color: #5f6368;
+}
+
+.email-list td {
+    color: #202124;
+}
+
+.email-list .email-item {
+    display: flex;
+    align-items: center;
+}
+
+.email-list .email-item .checkbox {
+    margin-right: 10px;
+}
+
+.email-list .email-item .sender {
+    flex: 1;
+    font-weight: bold;
+}
+
+.email-list .email-item .subject {
+    flex: 2;
+    color: #c2770fc4;
+    font-weight: bold;
+}
+
+.email-list .email-item .subject a {
+    color: #0f0063c4;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.email-list .email-item .subject :hover {
+    flex: 2;
+    color: #1500ff;
+    cursor: pointer;
+}
+
+.email-list .email-item .date {
+    color: #5f6368;
+}
+
+.pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.pagination a {
+    margin: 0 5px;
+    text-decoration: none;
+    color: #1a73e8;
+    cursor: pointer;
+}
+
+.delete-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #d93025;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}

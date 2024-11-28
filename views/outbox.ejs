@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outbox</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/inbox.css">
+    <script src="/js/outbox.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <% if (user) { %>
+            <div class="user-info">
+                <i class="fas fa-user-circle"></i>
+                <%= user.fullname %>
+            </div>
+            <% } %>
+                <a class="sign-out" href="/logout"><i class="fas fa-sign-out-alt"></i> Sign out</a>
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <div class="menu-item" onclick="navigateTo('compose')">
+                <i class="fas fa-edit"></i>
+                <span>Compose</span>
+            </div>
+            <div class="menu-item" onclick="navigateTo('inbox')">
+                <i class="fas fa-inbox"></i>
+                <span>Inbox</span>
+            </div>
+            <div class="menu-item" onclick="navigateTo('outbox')">
+                <i class="fas fa-paper-plane"></i>
+                <span>Outbox</span>
+            </div>
+        </div>
+        <div class="content">
+            <table class="email-list">
+                <thead>
+                    <tr>
+                        <th><input type="checkbox" id="select-all"></th>
+                        <th class="th-sender">Recipient</th>
+                        <th class="th-subject">Subject</th>
+                        <th class="th-date">Date</th>
+                    </tr>
+                </thead>
+                <tbody id="email-list-body">
+                    <!-- <% emails.forEach(email=> { %>
+                        <tr class="email-item">
+                            <td class="checkbox">
+                                <input type="checkbox" class="email-checkbox" data-id="<%= email.id %>">
+                            </td>
+                            <td class="sender">
+                                <%= email.receiver_email %>
+                            </td>
+                            <td class="subject">
+                                <a style="text-decoration: none;" href="/email/<%= email.id %>">
+                                    <%= email.subject? email.subject: 'No Subject' %>
+                                </a>
+                            </td>
+                            <td class="date">
+                                <%= new Date(email.sent_at).toLocaleString() %>
+                            </td>
+                        </tr>
+                        <% }); %> -->
+                </tbody>
+            </table>
+            <div class="pagination" id="pagination">
+            </div>
+            <button class="delete-button" onclick="deleteSelectedEmails()">Delete</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

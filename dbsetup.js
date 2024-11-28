@@ -1,16 +1,16 @@
 const mysql = require('mysql2')
 const db = mysql.createConnection({
     host: 'localhost',
-    user: 'wpr',
-    password: 'fit2024',
+    user: 'root',
+    password: '',
     port: 3306,
 }).promise()
 
 async function setupDatabase() {
     try {
-        await db.query("DROP DATABASE IF EXISTS wpr2101040115;")
-        await db.query("CREATE DATABASE IF NOT EXISTS wpr2101040115;")
-        await db.query("USE `wpr2101040115`;")
+        await db.query("DROP DATABASE IF EXISTS mailsystem;")
+        await db.query("CREATE DATABASE IF NOT EXISTS mailsystem;")
+        await db.query("USE `mailsystem`;")
         await db.query(`
             CREATE TABLE IF NOT EXISTS \`emails\` (
                 \`id\` int(11) NOT NULL,

@@ -27,8 +27,7 @@ This is a web-based email application which includes basic email system function
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/<your-repo-url>.git
-   cd <project-folder>
+   git clone https://github.com/longgpgp2/Simple-Mail-System.git
 2. Install dependencies:
    ```bash
    npm install
